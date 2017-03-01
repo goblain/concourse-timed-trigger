@@ -15,12 +15,12 @@
 package cmd
 
 import (
-	"encoding/json"
+	//	"encoding/json"
 	"fmt"
 	"github.com/spf13/cobra"
 )
 
-var OutRequest OutRequest
+var Request OutRequest
 
 var outCmd = &cobra.Command{
 	Use:   "out",
@@ -36,12 +36,12 @@ to quickly create a Cobra application.`,
 
 func init() {
 	RootCmd.AddCommand(outCmd)
-	outCmd.Flags().StringVarP(&OutRequest.Request, "request", "r", "", "concourse request object")
+	outCmd.Flags().StringVarP(&Request.Request, "request", "r", "", "concourse request object")
 }
 
 func outRun(cmd *cobra.Command, args []string) {
 	//	var Req OutRequest
 	//	json.Unmarshal([]byte(Request), &Req)
-	OutRequest.process()
-	fmt.Printf("%v/n", OutRequest.Params.After)
+	Request.Process()
+	fmt.Printf("%v/n", Request.Params.After)
 }

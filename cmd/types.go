@@ -40,7 +40,7 @@ type OutRequest struct {
 }
 
 func (self *OutRequest) Process() {
-	json.Unmarshal(self.Request, &self)
+	json.Unmarshal([]byte(self.Request), &self)
 }
 
 type OutResponse struct {
